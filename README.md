@@ -8,6 +8,10 @@ To run the app locally you should:
    - JDBC URL - jdbc:h2:mem:testdb
    - User Name - sa
    - Password -
+   
+PS: Didn't have enough time for:
+- add more validations
+- increase code coverage
 
 
 <h2>The task description.</h2>

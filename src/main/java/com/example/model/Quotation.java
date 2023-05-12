@@ -39,8 +39,4 @@ public class Quotation {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-//
-//    @OneToMany
-//    @JoinColumn(name = "subscription_id")
-//    private List<Subscription> subscriptions = new ArrayList<>();
 }

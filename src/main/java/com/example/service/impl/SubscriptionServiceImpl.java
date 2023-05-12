@@ -3,7 +3,6 @@ package com.example.service.impl;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.exception.NotFoundException;
 import com.example.model.Subscription;
