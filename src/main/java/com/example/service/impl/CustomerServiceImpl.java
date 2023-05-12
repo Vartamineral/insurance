@@ -2,6 +2,8 @@ package com.example.service.impl;
 
 import java.util.UUID;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import com.example.model.Customer;
@@ -20,5 +22,11 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer create(final Customer customer) {
         customer.setId(UUID.randomUUID());
         return customerRepository.saveAndFlush(customer);
+    }
+
+    @Override
+    @Transactional
+    public Customer update(final Customer customer) {
+        return customerRepository.save(customer);
     }
 }

@@ -1,12 +1,9 @@
 package com.example.converter.impl;
 
-import java.time.LocalDate;
-
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import com.example.model.Customer;
-import com.example.web.dto.CustomerCreateDto;
 import com.example.web.dto.CustomerDto;
 
 @Component
