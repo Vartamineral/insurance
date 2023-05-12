@@ -19,6 +19,8 @@
 
         <h2.version>2.1.214</h2.version>
         <liquibase.version>4.22.0</liquibase.version>
+        <lombok.version>1.18.26</lombok.version>
+        <openapi.version>1.7.0</openapi.version>
     </properties>
 
     <dependencies>
@@ -40,6 +42,17 @@
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
             <version>${liquibase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${openapi.version}</version>
         </dependency>
     </dependencies>
 
