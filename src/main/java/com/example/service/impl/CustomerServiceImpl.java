@@ -4,8 +4,10 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
+import com.example.exception.NotFoundException;
 import com.example.model.Customer;
 import com.example.repo.CustomerRepository;
 import com.example.service.CustomerService;
@@ -28,5 +30,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Transactional
     public Customer update(final Customer customer) {
         return customerRepository.save(customer);
+    }
+
+    @Override
+    public Customer findById(final UUID id) {
+        return customerRepository.findById(id).orElseThrow(() -> new NotFoundException("The customer not found: id = " + id));
     }
 }

@@ -11,7 +11,7 @@ public class CustomerToDtoConverter implements Converter<Customer, CustomerDto> 
 
     @Override
     public CustomerDto convert(final Customer source) {
-        return CustomerDto.builder()
+        return CustomerDto.customerDtoBuilder()
             .id(source.getId())
             .firstName(source.getFirstName())
             .middleName(source.getMiddleName())

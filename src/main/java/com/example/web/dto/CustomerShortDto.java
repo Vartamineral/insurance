@@ -13,6 +13,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.validation.annotation.Validated;
 
@@ -40,7 +41,7 @@ public class CustomerShortDto {
     @Email
     private String email;
 
-    @Max(value = 16)
+    @Size(max = 16)
     private String phoneNumber;
 
     private String birthDate;

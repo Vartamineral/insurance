@@ -40,8 +40,4 @@ public class Customer {
     private String phoneNumber;
 
     private LocalDate birthDate;
-
-//    @OneToMany
-//    @JoinColumn(name = "quotation_id")
-//    private List<Quotation> quotations = new ArrayList<>();
 }

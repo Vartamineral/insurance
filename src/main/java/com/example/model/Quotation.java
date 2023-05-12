@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
@@ -21,6 +23,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "quotations")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Builder
 public class Quotation {
 
     @Id
@@ -35,8 +39,8 @@ public class Quotation {
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-
-    @OneToMany
-    @JoinColumn(name = "subscription_id")
-    private List<Subscription> subscriptions = new ArrayList<>();
+//
+//    @OneToMany
+//    @JoinColumn(name = "subscription_id")
+//    private List<Subscription> subscriptions = new ArrayList<>();
 }

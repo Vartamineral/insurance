@@ -9,7 +9,7 @@ import com.example.model.Customer;
 import com.example.web.dto.CustomerShortDto;
 
 @Component
-public class CreateDtoToCustomerConverter implements Converter<CustomerShortDto, Customer> {
+public class ShortDtoToCustomerConverter implements Converter<CustomerShortDto, Customer> {
 
     @Override
     public Customer convert(final CustomerShortDto source) {
