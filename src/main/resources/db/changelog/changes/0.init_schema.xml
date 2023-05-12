@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="create_table_customers" author="Oleg">
+        <createTable tableName="customers">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"
+                             nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(256)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="middle_name" type="varchar(256)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_name" type="varchar(256)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(128)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone_number" type="varchar(16)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="birth_date" type="Date">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table_quotations" author="Oleg">
+        <createTable tableName="quotations">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"
+                             nullable="false"/>
+            </column>
+            <column name="begining_of_insurance" type="Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="insured_amount" type="numeric(20,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date_of_signing_mortgage" type="Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="customer_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_customer_id"
+                             references="customers(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create_table_subscriptions" author="Oleg">
+        <createTable tableName="subscriptions">
+            <column name="id" type="UUID">
+                <constraints primaryKey="true"
+                             nullable="false"/>
+            </column>
+            <column name="start_date" type="Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="valid_until" type="Date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="quotation_id" type="UUID">
+                <constraints nullable="false"
+                             foreignKeyName="fk_quotation_id"
+                             references="quotations(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
