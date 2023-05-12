@@ -44,5 +44,5 @@ public class CustomerShortDto {
     @Size(max = 16)
     private String phoneNumber;
 
-    private String birthDate;
+    private LocalDate birthDate;
 }

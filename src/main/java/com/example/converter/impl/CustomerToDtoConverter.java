@@ -18,7 +18,7 @@ public class CustomerToDtoConverter implements Converter<Customer, CustomerDto> 
             .lastName(source.getLastName())
             .email(source.getEmail())
             .phoneNumber(source.getPhoneNumber())
-            .birthDate(source.getBirthDate().toString())
+            .birthDate(source.getBirthDate())
             .build();
     }
 }

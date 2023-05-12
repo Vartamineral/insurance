@@ -39,7 +39,7 @@
             <column name="begining_of_insurance" type="Date">
                 <constraints nullable="false"/>
             </column>
-            <column name="insured_amount" type="numeric">
+            <column name="insured_amount" type="numeric(20,2)">
                 <constraints nullable="false"/>
             </column>
             <column name="date_of_signing_mortgage" type="Date">

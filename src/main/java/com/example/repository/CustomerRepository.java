@@ -1,4 +1,4 @@
-package com.example.repo;
+package com.example.repository;
 
 import java.util.UUID;
 

@@ -14,26 +14,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.facade.QuotationFacade;
-import com.example.web.dto.QuotationDto;
-import com.example.web.dto.QuotationShortDto;
+import com.example.facade.SubscriptionFacade;
+import com.example.web.dto.SubscriptionDto;
+import com.example.web.dto.SubscriptionShortDto;
 import lombok.RequiredArgsConstructor;
 
 
 @RestController
-@RequestMapping(value = "/api/v1/quotations", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/v1/subscriptions", produces = MediaType.APPLICATION_JSON_VALUE)
 @RequiredArgsConstructor
-public class QuotationController {
+public class SubscriptionController {
 
-    private final QuotationFacade quotationFacade;
+    private final SubscriptionFacade subscriptionFacade;
 
     @PostMapping
-    public ResponseEntity<QuotationDto> create(@Valid @RequestBody QuotationShortDto dto) {
-        return new ResponseEntity<>(quotationFacade.create(dto), HttpStatus.CREATED);
+    public ResponseEntity<SubscriptionDto> create(@Valid @RequestBody SubscriptionShortDto dto) {
+        return new ResponseEntity<>(subscriptionFacade.create(dto), HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<QuotationDto> findById(@RequestParam UUID id) {
-        return new ResponseEntity<>(quotationFacade.findById(id), HttpStatus.OK);
+    @GetMapping("{id}")
+    public ResponseEntity<SubscriptionDto> findById(@Valid @RequestParam UUID id) {
+        return new ResponseEntity<>(subscriptionFacade.findById(id), HttpStatus.OK);
     }
 }

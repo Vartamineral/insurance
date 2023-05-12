@@ -32,4 +32,9 @@ public class QuotationFacadeImpl implements QuotationFacade {
         Quotation createdQuotation = quotationService.create(quotation);
         return conversionService.convert(createdQuotation, QuotationDto.class);
     }
+
+    @Override
+    public QuotationDto findById(final UUID id) {
+        return conversionService.convert(quotationService.findById(id), QuotationDto.class);
+    }
 }

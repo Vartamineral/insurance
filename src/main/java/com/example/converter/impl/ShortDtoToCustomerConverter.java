@@ -19,7 +19,7 @@ public class ShortDtoToCustomerConverter implements Converter<CustomerShortDto, 
             .lastName(source.getLastName())
             .email(source.getEmail())
             .phoneNumber(source.getPhoneNumber())
-            .birthDate(LocalDate.parse(source.getBirthDate()))
+            .birthDate(source.getBirthDate())
             .build();
     }
 }

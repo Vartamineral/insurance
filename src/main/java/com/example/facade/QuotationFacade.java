@@ -9,4 +9,5 @@ import com.example.web.dto.QuotationShortDto;
 
 public interface QuotationFacade {
     QuotationDto create(final QuotationShortDto dto);
+    QuotationDto findById(final UUID id);
 }

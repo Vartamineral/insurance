@@ -1,5 +1,6 @@
 package com.example.web.dto;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.validation.constraints.Email;
@@ -33,7 +34,7 @@ public class CustomerDto extends CustomerShortDto{
                        @NotBlank(message = "lastName is mandatory") final String lastName,
                        @NotBlank(message = "Email is mandatory") @Email final String email,
                        @Size(max = 16) final String phoneNumber,
-                       final String birthDate,
+                       final LocalDate birthDate,
                        final UUID id) {
         super(firstName, middleName, lastName, email, phoneNumber, birthDate);
         this.id = id;

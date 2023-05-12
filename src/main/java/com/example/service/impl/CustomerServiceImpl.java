@@ -4,12 +4,11 @@ import java.util.UUID;
 
 import javax.transaction.Transactional;
 
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 import com.example.exception.NotFoundException;
 import com.example.model.Customer;
-import com.example.repo.CustomerRepository;
+import com.example.repository.CustomerRepository;
 import com.example.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 

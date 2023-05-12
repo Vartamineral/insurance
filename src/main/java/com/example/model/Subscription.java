@@ -5,9 +5,13 @@ import java.util.UUID;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
@@ -15,6 +19,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "subscriptions")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Builder
 public class Subscription {
 
     @Id
@@ -23,4 +29,8 @@ public class Subscription {
     private LocalDate startDate;
 
     private LocalDate validUntil;
+
+    @ManyToOne
+    @JoinColumn(name = "quotation_id")
+    private Quotation quotation;
 }
